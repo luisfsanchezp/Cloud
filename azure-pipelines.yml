@@ -1,4 +1,5 @@
 # Docker
+
 # Build a Docker image
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
@@ -27,3 +28,10 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/app/client/dockerfile'
         tags: |
           $(tag)
+    - task: GitHubComment@0
+  inputs:
+    gitHubConnection: 'luisfsanchezp'
+    repositoryName: '$(Build.Repository.Name)'
+    id: '1001'
+    comment: 'lOREN iPSUM'
+    
